@@ -88,6 +88,10 @@ class LLMBrain:
         for attempt in range(max_retries + 1):
             raw = self._raw_call(self.history)
             last_raw = raw
+            # 小模型偶尔输出 markdown 代码块围栏，预处理去掉以提高首次成功率
+            raw = raw.strip()
+            if raw.startswith("```"):
+                raw = raw.removeprefix("```json").removeprefix("```").removesuffix("```").strip()
             try:
                 parsed = json.loads(raw)
             except json.JSONDecodeError as e:
@@ -125,5 +129,5 @@ def pick_backend():
         pass
     raise RuntimeError(
         "没有可用的 LLM 后端。请先安装并启动 Ollama，然后执行：\n"
-        "  ollama pull qwen3:14b\n"
+        f"  ollama pull {config.OLLAMA_MODEL}\n"
         "或在 config.py 里填写 REMOTE_VLLM_URL 使用远程服务器。")

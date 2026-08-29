@@ -23,6 +23,7 @@ COMMANDS = [
 
 def main():
     os.chdir(PROJECT_ROOT)
+    os.makedirs("logs", exist_ok=True)
     backend, model = pick_backend()
     print(f"[LLM] backend={backend} model={model}")
     brain = LLMBrain(backend, model=model)
@@ -37,6 +38,7 @@ def main():
         print(f"\n===== {name}: {cmd} =====")
         lines += [f"\n## {name}\n", f"- 指令：`{cmd}`\n", f"- 预期：{expect}\n"]
         ok = False
+        raw = ""
         try:
             skills, warnings, raw = brain.plan(cmd)
         except Exception as e:
@@ -58,7 +60,10 @@ def main():
                     break
             if warnings:
                 lines.append(f"- 安全修正：{warnings}\n")
-        verdict = "PASS" if ok else "FAIL"
+        if name.startswith("A5"):
+            verdict = "PASS*(需人工确认)" if ok else "FAIL"
+        else:
+            verdict = "PASS" if ok else "FAIL"
         results.append((name, verdict))
         lines.append(f"- 判定：**{verdict}**\n")
         sim.reset()
@@ -67,6 +72,7 @@ def main():
     lines.append("\n## 汇总\n\n| 项目 | 判定 |\n|---|---|\n")
     for name, verdict in results:
         lines.append(f"| {name} | {verdict} |\n")
+    lines.append("\n> *A5 为模糊指令，\"PASS\"仅表示执行无异常，行为合理性需人工确认。\n")
     report = os.path.join("logs", f"acceptance_{stamp}.md")
     with open(report, "w", encoding="utf-8") as f:
         f.write("".join(lines))

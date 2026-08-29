@@ -46,7 +46,7 @@ python view_go2.py
 # 3) 无 LLM 录 demo 视频
 python record_demo.py
 
-# 4) 完整链路（先安装 Ollama 并 ollama pull qwen3:14b）
+# 4) 完整链路（先安装 Ollama 并 ollama pull qwen3:8b）
 python planner.py
 ```
 

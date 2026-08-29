@@ -59,6 +59,7 @@ def run_once(brain: LLMBrain, sim: Go2Sim, user_cmd: str, logf) -> bool:
             print(f"[执行失败 {i}/{len(skills)}] {s} —— {e}")
             log_event(logf, type="error", stage="exec", skill=s.name,
                       params=s.params, msg=str(e))
+            sim.reset()  # 执行中断后复位，避免脏状态影响后续命令
             return False
         print(f"[执行 {i}/{len(skills)}] {s} —— {desc}")
         log_event(logf, type="exec", skill=s.name, params=s.params, desc=desc)
@@ -72,8 +73,11 @@ def main():
     ap.add_argument("--model", default=None)
     ap.add_argument("--base-url", default=None)
     ap.add_argument("--headless", action="store_true", help="不开3D窗口")
+    ap.add_argument("--force-local", action="store_true", help="强制使用本地 Ollama（等价于 --backend ollama，用于降级演示）")
     args = ap.parse_args()
 
+    if args.force_local:
+        args.backend = "ollama"
     if args.backend == "auto":
         backend, detected_model = pick_backend()
         model = args.model or detected_model

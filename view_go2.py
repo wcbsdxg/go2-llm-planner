@@ -1,4 +1,6 @@
-"""步骤0自检：打开3D窗口看 Go2 站立 + 原地坐下/起立循环。按 Ctrl+C 退出。"""
+"""步骤0自检：打开3D窗口看 Go2 站立 + 原地坐下/起立循环。按 Ctrl+C 退出。
+
+headless 参数仅为兼容保留；是否开窗由 start_viewer() 决定。"""
 import time
 
 from sim_backend import Go2Sim
