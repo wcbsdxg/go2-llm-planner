@@ -1,0 +1,4 @@
+mujoco>=3.12
+mujoco-python-viewer
+opencv-python
+requests

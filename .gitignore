@@ -1,0 +1,6 @@
+.venv/
+third_party/
+__pycache__/
+*.pyc
+videos/
+smoke_test.png
