@@ -4,3 +4,8 @@ __pycache__/
 *.pyc
 videos/
 smoke_test.png
+
+# 私有/内部文件：只保留本地，不入公开仓库
+docs/application.md
+docs/NEXT_STEPS.md
+tools/
