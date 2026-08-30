@@ -1,0 +1,22 @@
+{"type": "session_start", "backend": "ollama", "model": "qwen3:8b", "t": "19:30:02"}
+{"type": "user", "text": "向前走", "t": "19:30:57"}
+{"type": "plan", "llm_raw": "{\"plan\": [{\"name\": \"Move\", \"params\": {\"vx\": 0.3, \"vy\": 0, \"vyaw\": 0, \"duration\": 2}}]}", "skills": [{"name": "Move", "params": {"vx": 0.3, "vy": 0.0, "vyaw": 0.0, "duration": 2.0}}], "warnings": [], "t": "19:31:15"}
+{"type": "exec", "skill": "Move", "params": {"vx": 0.3, "vy": 0.0, "vyaw": 0.0, "duration": 2.0}, "desc": "移动 2.0s (vx=0.30, vy=0.00, vyaw=0.00)", "t": "19:31:17"}
+{"type": "user", "text": "向前走", "t": "19:32:17"}
+{"type": "plan", "llm_raw": "{\"plan\": [{\"name\": \"Move\", \"params\": {\"vx\": 0.3, \"vy\": 0, \"vyaw\": 0, \"duration\": 2}}]}", "skills": [{"name": "Move", "params": {"vx": 0.3, "vy": 0.0, "vyaw": 0.0, "duration": 2.0}}], "warnings": [], "t": "19:32:25"}
+{"type": "exec", "skill": "Move", "params": {"vx": 0.3, "vy": 0.0, "vyaw": 0.0, "duration": 2.0}, "desc": "移动 2.0s (vx=0.30, vy=0.00, vyaw=0.00)", "t": "19:32:27"}
+{"type": "user", "text": "左转90度", "t": "19:32:34"}
+{"type": "plan", "llm_raw": "{\"plan\": [{\"name\": \"Move\", \"params\": {\"vx\": 0, \"vy\": 0, \"vyaw\": 0.8, \"duration\": 2}}]}", "skills": [{"name": "Move", "params": {"vx": 0.0, "vy": 0.0, "vyaw": 0.8, "duration": 2.0}}], "warnings": [], "t": "19:32:41"}
+{"type": "exec", "skill": "Move", "params": {"vx": 0.0, "vy": 0.0, "vyaw": 0.8, "duration": 2.0}, "desc": "移动 2.0s (vx=0.00, vy=0.00, vyaw=0.80)", "t": "19:32:44"}
+{"type": "user", "text": "向前走三步，右转，再向前走三步", "t": "19:32:51"}
+{"type": "plan", "llm_raw": "{\"plan\": [{\"name\": \"Move\", \"params\": {\"vx\": 0.3, \"vy\": 0, \"vyaw\": 0, \"duration\": 3}}, {\"name\": \"Move\", \"params\": {\"vx\": 0, \"vy\": 0, \"vyaw\": -0.8, \"duration\": 2}}, {\"name\": \"Move\", \"params\": {\"vx\": 0.3, \"vy\": 0, \"vyaw\": 0, \"duration\": 3}}]}", "skills": [{"name": "Move", "params": {"vx": 0.3, "vy": 0.0, "vyaw": 0.0, "duration": 3.0}}, {"name": "Move", "params": {"vx": 0.0, "vy": 0.0, "vyaw": -0.8, "duration": 2.0}}, {"name": "Move", "params": {"vx": 0.3, "vy": 0.0, "vyaw": 0.0, "duration": 3.0}}], "warnings": [], "t": "19:33:17"}
+{"type": "exec", "skill": "Move", "params": {"vx": 0.3, "vy": 0.0, "vyaw": 0.0, "duration": 3.0}, "desc": "移动 3.0s (vx=0.30, vy=0.00, vyaw=0.00)", "t": "19:33:21"}
+{"type": "exec", "skill": "Move", "params": {"vx": 0.0, "vy": 0.0, "vyaw": -0.8, "duration": 2.0}, "desc": "移动 2.0s (vx=0.00, vy=0.00, vyaw=-0.80)", "t": "19:33:23"}
+{"type": "exec", "skill": "Move", "params": {"vx": 0.3, "vy": 0.0, "vyaw": 0.0, "duration": 3.0}, "desc": "移动 3.0s (vx=0.30, vy=0.00, vyaw=0.00)", "t": "19:33:26"}
+{"type": "user", "text": "走过去然后坐下", "t": "19:33:33"}
+{"type": "plan", "llm_raw": "{\"plan\": [{\"name\": \"Move\", \"params\": {\"vx\": 0.3, \"vy\": 0, \"vyaw\": 0, \"duration\": 2}}, {\"name\": \"Sit\", \"params\": {}}]}", "skills": [{"name": "Move", "params": {"vx": 0.3, "vy": 0.0, "vyaw": 0.0, "duration": 2.0}}, {"name": "Sit", "params": {}}], "warnings": [], "t": "19:33:40"}
+{"type": "exec", "skill": "Move", "params": {"vx": 0.3, "vy": 0.0, "vyaw": 0.0, "duration": 2.0}, "desc": "移动 2.0s (vx=0.30, vy=0.00, vyaw=0.00)", "t": "19:33:42"}
+{"type": "exec", "skill": "Sit", "params": {}, "desc": "坐下", "t": "19:33:43"}
+{"type": "user", "text": "随便动动", "t": "19:33:52"}
+{"type": "plan", "llm_raw": "{\"plan\": [{\"name\": \"Move\", \"params\": {\"vx\": 0.3, \"vy\": 0, \"vyaw\": 0, \"duration\": 2}}]}", "skills": [{"name": "Move", "params": {"vx": 0.3, "vy": 0.0, "vyaw": 0.0, "duration": 2.0}}], "warnings": [], "t": "19:34:00"}
+{"type": "exec", "skill": "Move", "params": {"vx": 0.3, "vy": 0.0, "vyaw": 0.0, "duration": 2.0}, "desc": "移动 2.0s (vx=0.30, vy=0.00, vyaw=0.00)", "t": "19:34:02"}
