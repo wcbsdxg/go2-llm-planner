@@ -80,6 +80,10 @@ class LLMBrain:
         return self._call_openai(messages)
 
     # ---------- 带校验重试的规划入口 ----------
+    def warmup(self):
+        """把模型预载入显存。首次推理需 20~60 秒，预热后首条指令即时响应。"""
+        self._raw_call([{"role": "user", "content": "1"}])
+
     def plan(self, user_cmd, max_retries=2):
         """返回 (skills, warnings, llm_raw_text)。失败抛 RuntimeError。"""
         self.history = [{"role": "system", "content": SYSTEM_PROMPT},

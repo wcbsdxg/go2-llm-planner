@@ -85,6 +85,12 @@ def main():
         backend, model = args.backend, args.model
     print(f"[LLM] backend={backend} model={model}")
     brain = LLMBrain(backend, model=model, base_url=args.base_url)
+    print("[预热] 正在将模型载入显存（首次约 20~60 秒，之后秒回）...")
+    try:
+        brain.warmup()
+        print("[预热] 完成，模型已就绪")
+    except Exception as e:
+        print(f"[预热] 失败（不影响启动，首条指令会较慢）: {e}")
 
     sim = Go2Sim(headless=args.headless)
     if not args.headless:

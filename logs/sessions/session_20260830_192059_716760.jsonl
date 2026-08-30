@@ -1,0 +1,2 @@
+{"type": "session_start", "backend": "ollama", "model": "qwen3:8b", "t": "19:20:59"}
+{"type": "user", "text": "随便动动", "t": "19:21:12"}

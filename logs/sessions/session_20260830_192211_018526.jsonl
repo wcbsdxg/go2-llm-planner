@@ -1,0 +1,2 @@
+{"type": "session_start", "backend": "ollama", "model": "qwen3:8b", "t": "19:22:11"}
+{"type": "user", "text": "向前走三步", "t": "19:22:24"}
