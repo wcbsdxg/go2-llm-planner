@@ -52,7 +52,7 @@ python planner.py
 
 ## 路线图
 
-- [x] Day 1：MuJoCo Go2 + LLM 规划闭环（演示后端）
-- [ ] Week 2：MJX 训练步态策略替换演示后端
-- [ ] Week 3：接入 Qwen2.5-VL 视觉理解（仿真截图→语义反馈）
-- [ ] Week 4：远程 32B 大脑 + 本地小脑的边缘-云分层架构与降级策略
+- [x] Day 1：MuJoCo Go2 + LLM 规划闭环（演示后端），5 条验收指令全过（报告见 logs/）
+- [ ] Week 2：MuJoCo Playground 预训练 Go2 策略推理部署——"滑行"→"走路"（评估后放弃从零训练）
+- [ ] Week 3（可选）：接入 Qwen2.5-VL 3B 视觉理解（仿真截图→语义反馈，按需"看"技能避免与规划模型争抢 8GB 显存）
+- [x] Week 4（部分）：--force-local 降级演示已实现；待补 docs/ARCHITECTURE.md 边缘-云分层设计文档
